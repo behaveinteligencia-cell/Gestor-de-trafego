@@ -13,3 +13,4 @@ data/midias/
 .DS_Store
 data/midia/
 data/analises/*.md
+data/*.log
