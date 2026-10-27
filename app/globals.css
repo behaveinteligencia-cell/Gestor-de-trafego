@@ -1,0 +1,91 @@
+@import "tailwindcss";
+
+:root {
+  --fundo: #f6f7f9;
+  --superficie: #ffffff;
+  --borda: #e4e7ec;
+  --texto: #111827;
+  --texto-suave: #6b7280;
+  --primaria: #ff6a1a;
+  --primaria-suave: #fff1e8;
+  --ok: #16a34a;
+  --atencao: #d97706;
+  --critico: #dc2626;
+  --lateral: #121417;
+  --lateral-texto: #c9ced6;
+}
+
+@theme inline {
+  --color-fundo: var(--fundo);
+  --color-superficie: var(--superficie);
+  --color-borda: var(--borda);
+  --color-texto: var(--texto);
+  --color-suave: var(--texto-suave);
+  --color-primaria: var(--primaria);
+  --color-primaria-suave: var(--primaria-suave);
+  --color-ok: var(--ok);
+  --color-atencao: var(--atencao);
+  --color-critico: var(--critico);
+  --color-lateral: var(--lateral);
+  --color-lateral-texto: var(--lateral-texto);
+  --font-sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Inter", sans-serif;
+}
+
+html,
+body {
+  background: var(--fundo);
+  color: var(--texto);
+}
+
+.cartao {
+  @apply bg-superficie border border-borda rounded-xl;
+}
+
+.tabela {
+  @apply w-full text-sm;
+}
+.tabela th {
+  @apply text-left text-xs font-medium uppercase tracking-wide text-suave py-2 px-3 border-b border-borda whitespace-nowrap;
+}
+.tabela td {
+  @apply py-2.5 px-3 border-b border-borda/70 align-middle;
+}
+.tabela tr:last-child td {
+  @apply border-b-0;
+}
+.tabela .num {
+  @apply text-right tabular-nums;
+}
+
+.botao {
+  @apply inline-flex items-center gap-1.5 rounded-lg px-3 py-1.5 text-sm font-medium border border-borda bg-superficie hover:bg-fundo transition-colors disabled:opacity-50 disabled:cursor-not-allowed;
+}
+.botao-primario {
+  @apply inline-flex items-center gap-1.5 rounded-lg px-3 py-1.5 text-sm font-medium border transition-colors disabled:opacity-50 disabled:cursor-not-allowed bg-primaria border-primaria text-white hover:bg-[#e85d12];
+}
+.botao-perigo {
+  @apply inline-flex items-center gap-1.5 rounded-lg px-3 py-1.5 text-sm font-medium border transition-colors disabled:opacity-50 disabled:cursor-not-allowed bg-superficie text-critico border-critico/30 hover:bg-red-50;
+}
+
+.campo {
+  @apply w-full rounded-lg border border-borda bg-superficie px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-primaria/40;
+}
+.rotulo {
+  @apply block text-xs font-medium text-suave mb-1;
+}
+
+.etiqueta {
+  @apply inline-flex items-center rounded-md px-2 py-0.5 text-xs font-medium;
+}
+
+.prosa h1 { @apply text-2xl font-semibold mt-2 mb-4; }
+.prosa h2 { @apply text-lg font-semibold mt-6 mb-2; }
+.prosa h3 { @apply text-base font-semibold mt-4 mb-1; }
+.prosa p { @apply my-2 leading-relaxed; }
+.prosa ul { @apply list-disc pl-6 my-2; }
+.prosa ol { @apply list-decimal pl-6 my-2; }
+.prosa table { @apply w-full text-sm my-3 border border-borda rounded-lg overflow-hidden; }
+.prosa th { @apply bg-fundo text-left px-3 py-2 text-xs uppercase text-suave border-b border-borda; }
+.prosa td { @apply px-3 py-1.5 border-b border-borda/60; }
+.prosa code { @apply bg-fundo rounded px-1 py-0.5 text-[0.9em]; }
+.prosa em { @apply text-suave; }

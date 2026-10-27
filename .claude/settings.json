@@ -1,0 +1,15 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm run gestor -- *)",
+      "Bash(npm run gestor:*)",
+      "Bash(npm run dev*)",
+      "Bash(npm run typecheck)",
+      "Read(./data/**)"
+    ],
+    "deny": [
+      "Read(./.env*)",
+      "Read(./.env.local)"
+    ]
+  }
+}
